@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Profile";
+}
+<label>Professional Description:</label>
+<p class="hardRow solidBorder">@ViewBag.sessionUserDescription</p>
+<label>Professional Network</label>
+<div class="scroll">
+    @{
+        if(ViewBag.sessionUserConnections != null){
+            foreach(var connection in ViewBag.sessionUserConnections){
+                if(connection.userId == ViewBag.sessionUserId){
+                    <a href="showUser/@connection.connection.id">@connection.connection.first @connection.connection.last</a>
+                } else {
+                    <a href="showUser/@connection.user.id">@connection.user.first @connection.user.last</a>                    
+                }
+            }
+        }
+    }
+</div>
+<br>
+<label class="noMargin">Pending Invitations</label>
+<p class="noMargin">The following have asked you to join their network:</p>
+<div class="scroll">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                @if(ViewBag.sessionUserInvites != null){
+                    @foreach(var invite in ViewBag.sessionUserInvites){
+                        <tr>
+                            <td class="noPad">@invite.user.first @invite.user.last</td>
+                            <td class="noPad">
+                                <a href="/acceptInvite/@invite.id">Accept</a>
+                                <a href="/ignoreInvite/@invite.id">Ignore</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

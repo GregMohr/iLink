@@ -1,0 +1,105 @@
+*{
+    font-size: .95em;
+    /*border: solid red 1px;*/
+    margin: 0;
+}
+input[type="datetime-local"]{
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid #33C3F0;
+    outline: 0; 
+}
+.button, button{
+    line-height: 30px;
+    height: 30px;
+    padding: 0 25px;
+    border: 1px solid black;
+    display: inline-block;
+}
+input[type], select{
+    height: 30px;
+    border: 1px solid black;
+}
+.productDisplay{
+    border: solid black 1px;
+    min-height: 15vh;
+    display: inline-block
+}
+span{
+    color: red;
+}
+.nav{
+    text-align: right;
+}
+.nav a{
+    border-right: solid grey 1px;
+    padding: 0 5px 0 2px;
+}
+.long{
+    width: 83%;
+}
+.solidBorder{
+    border: solid black 1px;    
+}
+.solidBottomBorder{
+    border-bottom: solid black 1px;    
+}
+.noLeft{
+    margin-left: 0;
+}
+.shortLeft{
+    margin-left: 5px;    
+}
+.longLeft{
+    margin-left: 43px;    
+}
+.center{
+    text-align: center;
+}
+.noBottom{
+    margin-bottom: 0;
+}
+.noMargin{
+    margin: 0;
+}
+.topMargin{
+    margin-top: 5px;
+}
+.leftAlign{
+    text-align: left;
+}
+.rightAlign{
+    text-align: right;
+}
+.error{
+    color: red;
+    margin: 0;
+}
+select{
+    vertical-align: bottom;
+}
+.inline{
+    display: inline;
+}
+.oneWide{
+    width: 100px;
+}
+.hardRow{
+    height: 40px;
+    box-sizing: border-box;
+}
+.scroll{
+    width: 400px;
+    height: 100px;
+    overflow: auto;
+    box-sizing: border-box;
+    border: solid black 1px; 
+}
+.noPad{
+    padding: 0;
+}

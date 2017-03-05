@@ -1,0 +1,37 @@
+@model exam4.Models.User
+@{
+    ViewData["Title"] = "Login/Registration";
+}
+<h2>Please @ViewBag.view</h2>
+
+<a href="@ViewBag.showLink">@ViewBag.other</a>
+
+<form action="@ViewBag.view" method="post">
+    @if(ViewBag.view == "Register"){
+        <label>First Name:</label>
+        <input asp-for="first">
+        <span asp-validation-for="first"></span>
+        <label>Last Name:</label>
+        <input asp-for="last">
+        <span asp-validation-for="last"></span>
+    }
+    <label>Email:</label>
+    <input asp-for="email">
+    <span asp-validation-for="email"></span>
+    <label>Password:</label>
+    <input type="password" asp-for="password">
+    <span asp-validation-for="password"></span>
+    @if(ViewBag.view == "Register"){
+       <label>Confirm:</label>
+       <input type="password" name="confirm">
+       <label>Profile Description:</label>
+       <input type="text" name="description">
+       <span asp-validation-for="description"></span>
+    }
+    <br>
+    <button type="submit">@ViewBag.view</button>
+    @if(@ViewBag.confirmFail != null)
+    {
+        <span>@ViewBag.confirmFail</span> 
+    }
+</form>

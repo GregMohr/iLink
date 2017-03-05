@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iLink - @ViewData["Title"]</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+            asp-fallback-href="~/lib/skeleton/css/skeleton.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container body-content">
+        <div class="row nav">
+            @{
+                if(ViewData["Title"] != "Profile" && ViewData["Title"] != "Login/Registration"){
+                    <a href="/profile">Profile</a>
+                } else if(ViewBag.sessionUserName != null){
+                    <p class="noMargin">Welcome, @ViewBag.sessionUserName!</p>
+                }
+                if(ViewData["Title"] == "Profile"){<a href="/allUsers">All Users</a>}
+                if(ViewData["Title"] != "Login/Registration"){<a href="/logout">Logout</a>}
+            }
+        </div>
+        @RenderBody()
+    </div>
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        
+        
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

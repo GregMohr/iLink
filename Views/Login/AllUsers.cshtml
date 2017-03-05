@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Send Invites";
+}
+<p>Users you may want to connect with:</p>
+<div class="scroll">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                @if(ViewBag.notKnownUsers != null){
+                    @foreach(var username in ViewBag.notKnownUsers){
+                        <tr class="noMargin">
+                            <td class="noPad"><a href="showUser/@username.id">@username.username</a></td>
+                            <td class="noPad"><a href="sendInvite/@username.id">Connect</a></td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

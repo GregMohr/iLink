@@ -1,0 +1,4 @@
+Refactor: merge connections and invites to one table with a new flag field indicating which linkage type it is
+Would it be a good idea to dup connection records so there's one going each direction? 
+-That way they all get filled with an include rather than an include and an additional list iterating in
+There's nowhere showing session user who've they've sent invites to
